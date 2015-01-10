@@ -4,7 +4,7 @@
 %define zmgid_final apache
 
 Name:       zoneminder
-Version:    1.28.0
+Version:    1.28.1
 Release:    1%{?dist}
 Summary:    A camera monitoring and analysis tool
 Group:      System Environment/Daemons
@@ -164,6 +164,9 @@ rm -rf %{_docdir}/%{name}-%{version}
 %dir %attr(755,%{zmuid_final},%{zmgid_final}) %{_localstatedir}/spool/zoneminder-upload
 
 %changelog
+* Sat Jan 10 2015 Andrew Bauer <knnniggett@users.sourceforge.net> - 1.28.1 
+- Bump version for 1.28.1 release.
+
 * Sun Oct 5 2014 Andrew Bauer <knnniggett@users.sourceforge.net> - 1.28.0 
 - Bump version for 1.28.0 release.
 
