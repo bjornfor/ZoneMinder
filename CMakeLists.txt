@@ -537,7 +537,13 @@ else(zmconfgen_result EQUAL 0)
 endif(zmconfgen_result EQUAL 0)
 
 # Install zm.conf
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/zm.conf" DESTINATION "${ZM_CONFIG_DIR}")
+#
+# Note for nixpkgs: This deliberately installs zm.conf to $out instead of
+# /etc/zm.conf (the ZM_CONFIG variable). The thing is, the location of zm.conf
+# is baked into zoneminder and there is no way to change it at runtime. So we
+# build zoneminder with the promise that /etc/zm.conf will be available at
+# runtime, but actually install the default config file to $out.
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/zm.conf" DESTINATION "${CMAKE_INSTALL_SYSCONFDIR}")
 
 # Uninstall target
 configure_file(
