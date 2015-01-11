@@ -1,4 +1,4 @@
-#!/usr/bin/pkexec /usr/bin/perl
+#!/usr/bin/perl
 #
 # ==========================================================================
 #
@@ -50,5 +50,5 @@ if ( !$path || $status ) {
 }
 
 Info( "Redirecting command through systemctl\n" );
-exec("$path $command zoneminder");
+exec("pkexec $path $command zoneminder");
 
