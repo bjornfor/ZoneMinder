@@ -42,7 +42,6 @@ use Getopt::Long qw(:config no_ignore_case );
 
 $| = 1;
 
-$ENV{PATH}  = '/bin:/usr/bin';
 $ENV{SHELL} = '/bin/sh' if exists $ENV{SHELL};
 delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
 
